@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+
 ]
 EXTERNAL_APPS=[
     'home',
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "home/template"],
+        'DIRS': [BASE_DIR / "core/templates"],  # This should point to your templates folder
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

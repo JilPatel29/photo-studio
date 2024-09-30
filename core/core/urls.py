@@ -16,15 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import index, success_page, home, contact,gallery;
+from home import views  # Import views from the home app
 
 urlpatterns = [
-    
-    path('', index, name='index'),
-    path('success_page/', success_page, name='success_page'),
-    path('admin/', admin.site.urls),
-    path('home/',home,name='home'),
-    path('home/gallery',gallery,name='gallery'),
-    path('home/gallery/contact/',contact,name='contact')
-    
+    path('', views.index, name='index'),  # The root URL will load index.html
+    path('home/', views.home, name='home'),  # /home/ will also load index.html
+    path('gallery/', views.gallery, name='gallery'),  # /gallery/ will load gallery.html
+    path('contact/', views.contact, name='contact'),  # /contact/ will load contact.html
+    path('services/', views.services, name='services'),  # /services/ will load home.html
 ]

@@ -18,14 +18,17 @@ def index(request):
     
     return render(request, "index.html", context={'people': people})
 
-def success_page(request):
-    return HttpResponse("<h1>HELLO IS A SUCCESS PAGE!...</h1>")
+def services(request):
+    return render (request,"services.html")
 
 def home(request):
     return render (request,"home.html")
 
 def gallery(request):
-    return render(request,"gallery.html");
+    return render(request,"gallery.html")
 
 def contact(request):
     return render (request,"contact.html")
+
+def index(request):
+    return render(request, 'index.html')

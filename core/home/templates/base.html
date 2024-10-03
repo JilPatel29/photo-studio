@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Modelling Studio</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #dd97b5, #ac5594);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 36px;
+            color: #181717;
+            font-family: 'Cursive', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0d0d0d;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: #f3e5f5;
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #eb0b3f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <i class="fas fa-heart"></i><u><b>CAPTURE LOVE: LOVE MODELLING STUDIO</b></u>
+    </div>
+    
+    <nav>
+        <a href="{% url 'index' %}"><b>Home</b></a>
+        <a href="{% url 'gallery' %}"><b>Gallery</b></a>
+        <a href="{% url 'services' %}"><b>Services</b></a>
+        <a href="{% url 'contact' %}"><b>Contact Us</b></a>
+    </nav>
+</header>
+
+<!-- Content will be inserted here -->
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer>
+    <p>Contact us: info@lovemodellingstudio.com | Follow us on
+        <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+    </p>
+</footer>
+
+</body>
+</html>

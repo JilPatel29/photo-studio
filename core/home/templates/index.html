@@ -7,7 +7,8 @@
 {% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
+    <!-- Include the content of index.html -->
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,10 +24,7 @@
             color: #333;
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
-        }
+       
 
         .logo {
             font-size: 36px;
@@ -91,44 +89,14 @@
             background: linear-gradient(to right, #f8c6dc, #ff6fe0);
         }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            background: #f3e5f5;
-        }
-
-        footer a {
-            margin: 0 10px;
-            color: #eb0b3f;
-            text-decoration: none;
-        }
-
-        .map {
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
-            border: 2px solid #333;
-            border-radius: 15px;
-        }
+      
+        
     </style>
 </head>
 
 <body>
 
-    <!-- <header>
-        <div class="logo">
-            <i class="fas fa-heart"></i><u><b>CAPTURE LOVE: LOVE MODELLING STUDIO</b></u>
-        </div>
-
-        <nav>
-            <a href="home"><b>Home</b></a>
-            <a href="gallery"><b>Gallery</b></a>
-            <a href="services"><b>Services</b></a>
-            <a href="contact"><b>Contact Us</b></a>
-            <a href="booking"><b>Booking</b></a>
-        </nav>
-    </header> -->
+   
 
     <div class="main">
         <img src="https://www.shaadibaraati.com/vendors-profile/08536435c3565555123ed89c603a7621.jpg"
@@ -139,28 +107,16 @@
         <button class="book-now">Book Now</button>
     </div>
 
-     <!-- Map Section   -->
-    <div class="map">
-        <h2>Our Studio Location</h2>
+   
+   
 
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.2426463298557!2d72.65056587567678!3d23.05156411524493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e86c2e7aff173%3A0xeb90bf16d071095f!2sLove%20Modeling%20Studio!5e0!3m2!1sen!2sin!4v1727703763276!5m2!1sen!2sin"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-<!-- 
-    <footer>
-        <p>Contact us: info@lovemodellingstudio.com | Follow us on
-            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-        </p>
-    </footer> -->
 
 </body>
 
 </html>
-{% endblock %}
-{% block footer %}
-    {% if not include %}
-        {{ block.super }}
-    {% endif %}
+
+    
+    {% include 'services.html' with include=True %}
+    {% include 'gallery.html' with include=True %}
+    {% include 'contact.html' with include=True %}
 {% endblock %}

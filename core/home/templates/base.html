@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,8 @@
         header {
             text-align: center;
             padding: 20px;
+            background: #ff6f91;
+            color: #fff;
         }
 
         .logo {
@@ -41,45 +44,50 @@
 
         footer {
             text-align: center;
-            margin-top: 50px;
             padding: 20px;
             background: #f3e5f5;
+            margin-top: 30px;
         }
 
         footer a {
             margin: 0 10px;
-            color: #eb0b3f;
+            color: #ff6f91;
             text-decoration: none;
         }
     </style>
 </head>
+
 <body>
+    {% block header %}
 
-<header>
-    <div class="logo">
-        <i class="fas fa-heart"></i><u><b>CAPTURE LOVE: LOVE MODELLING STUDIO</b></u>
-    </div>
-    
-    <nav>
-        <a href="{% url 'home' %}"><b>Home</b></a>
-        <a href="{% url 'gallery' %}"><b>Gallery</b></a>
-        <a href="{% url 'services' %}"><b>Services</b></a>
-        <a href="{% url 'contact' %}"><b>Contact Us</b></a>
-        <a href="{% url 'booking' %}"><b>Booking</b></a>
-    </nav>
-</header>
+    <header>
+        <div class="logo">
+            <i class="fas fa-heart"></i><u><b>CAPTURE LOVE: LOVE MODELLING STUDIO</b></u>
+        </div>
 
-<!-- Content will be inserted here -->
-<div class="content">
-    {% block content %}
+        <nav>
+            <a href="{% url 'home' %}"><b>Home</b></a>
+            <a href="{% url 'gallery' %}"><b>Gallery</b></a>
+            <a href="{% url 'services' %}"><b>Services</b></a>
+            <a href="{% url 'contact' %}"><b>Contact Us</b></a>
+            <a href="{% url 'booking' %}"><b>Booking</b></a>
+        </nav>
+    </header>
     {% endblock %}
-</div>
 
-<footer>
-    <p>Contact us: info@lovemodellingstudio.com | Follow us on
-        <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-    </p>
-</footer>
+    <!-- Content will be inserted here -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block footer %}
 
+    <footer>
+        <p>Contact us: info@lovemodellingstudio.com | Follow us on
+            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+        </p>
+    </footer>
+    {% endblock %}
 </body>
+
 </html>

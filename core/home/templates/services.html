@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+
+{% block header %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -146,4 +153,8 @@
 </body>
 </html>
 {% endblock %}
-
+{% block footer %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}

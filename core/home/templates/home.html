@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+
+{% block header %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <!-- Include the content of index.html -->
     <!DOCTYPE html>
@@ -108,12 +115,8 @@
 
 </html>
 
-    <!-- Include the content of services.html -->
-    {% include 'services.html' %}
-
-    <!-- Include the content of gallery.html -->
-    {% include 'gallery.html' %}
-
-    <!-- Include the content of contact.html -->
-    {% include 'contact.html' %}
+    
+    {% include 'services.html' with include=True %}
+    {% include 'gallery.html' with include=True %}
+    {% include 'contact.html' with include=True %}
 {% endblock %}

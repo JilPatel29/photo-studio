@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+
+{% block header %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +18,31 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f7f7f7;
+            background: #fdf1f1;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #ff6f91;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
         }
 
         .container {
@@ -58,7 +89,7 @@
         button {
             padding: 15px;
             font-size: 16px;
-            background-color: #28a745;
+            background-color: #d434a7;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -67,7 +98,7 @@
         }
 
         button:hover {
-            background-color: #218838;
+            background-color: #c526b3;
         }
 
         .error {
@@ -132,4 +163,9 @@
 
 </body>
 </html>
+{% endblock %}
+{% block footer %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
 {% endblock %}

@@ -26,5 +26,7 @@ urlpatterns = [
     path('services/', views.services, name='services'),  # /services/ will load home.html
     path('booking/', views.booking, name='booking'),  # /services/ will load home.html
     path('process-booking/', views.process_booking, name='process_booking'),
+    path('blog/', views.blog, name='blog'),  # This is correct
+
 
 ]

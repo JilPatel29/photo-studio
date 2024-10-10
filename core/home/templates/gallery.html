@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Love Modelling Studio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fdf1f1;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #ff6f91;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .gallery-buttons {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .gallery-buttons button {
+            background: #ff6f91;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .gallery-buttons button:hover {
+            background: #f8c6dc;
+            transform: scale(1.1);
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        .gallery-container img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f3e5f5;
+            margin-top: 30px;
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #ff6f91;
+            text-decoration: none;
+        }
+    </style>
+    
+</head>
+<body>
+
+<!-- <header>
+    <div class="logo">Capture Love</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact Us</a>
+    </nav>
+</header> -->
+
+<div class="gallery-buttons">
+    <button onclick="showGallery('all')">All</button>
+    <button onclick="showGallery('wedding')">Wedding</button>
+    <button onclick="showGallery('prewedding')">Pre-Wedding</button>
+    <button onclick="showGallery('birthday')">Birthday</button>
+    <button onclick="showGallery('outdoor')">Outdoor</button>
+</div>
+
+<div class="gallery-container">
+    <!-- Wedding Photos -->
+    <img src="https://josephkingphotography.in/wp-content/uploads/2022/08/Best-wedding-Photographer-Indore-Joseph-King-Photography3.jpg" class="wedding" alt="Wedding Photo">
+    <img src="https://www.lizmooredestinationweddings.com/wp-content/uploads/2015/08/Claudia2.jpg" class="wedding" alt="Wedding Sunset">
+
+    <!-- Pre-Wedding Photos -->
+    <img src="https://www.shubhlaxmifilms.com/wp-content/uploads/2022/11/ezgif.com-gif-maker-6-1024x683.webp" class="prewedding" alt="Pre-Wedding Photo">
+    <img src="https://www.shubhlaxmifilms.com/wp-content/uploads/2022/11/ezgif.com-gif-maker-17-1024x683.webp" class="prewedding" alt="Pre-Wedding Love">
+
+    <!-- Birthday Photos -->
+    <img src="https://heatherdecampphotography.com/wp-content/uploads/2021/06/19-13537-post/Los-Angeles-Birthday-party-photography-8.jpg" class="birthday" alt="Birthday Celebration">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmhLgkgEDFZofxeDnpCHZIX9kCjvCnYJ0xGoYIEf7TxlfgakX7je5JycJLNP1sO_xj04I&usqp=CAU" class="birthday" alt="Birthday Joy">
+
+    <!-- Outdoor Photos -->
+    <img src="https://images.ctfassets.net/3s5io6mnxfqz/72Afj88vaBRIGWGK6LStJ9/16a8618ea575758efa6e0319e23583ad/AdobeStock_243492854.jpeg" class="outdoor" alt="Outdoor Photography">
+    <img src="https://i0.wp.com/www.originalartphotography.co.uk/wp-content/uploads/2018/05/Dramatic-Outdoor-Portraits-2.jpg?fit=1618%2C1080&ssl=1" class="outdoor" alt="Outdoor Portrait">
+</div>
+
+<!-- <footer>
+    <p>Contact us: info@lovemodellingstudio.com | Follow us on
+        <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+    </p>
+</footer> -->
+
+</html>
+{% endblock %}
+{% block footer %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}

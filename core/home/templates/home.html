@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <!-- Include the content of index.html -->
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Modelling Studio</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #dd97b5, #ac5594);
+            color: #333;
+        }
+
+       
+
+        .logo {
+            font-size: 36px;
+            color: #181717;
+            font-family: 'Cursive', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #0d0d0d;
+            font-size: 18px;
+        }
+
+        .main {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .main img {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-banner {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #fff;
+            background: #ff6f91;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        .book-now {
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: linear-gradient(to right, #ff6f91, #f8c6dc);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .book-now:hover {
+            background: linear-gradient(to right, #f8c6dc, #ff6fe0);
+        }
+
+      
+        
+    </style>
+</head>
+
+<body>
+
+   
+
+    <div class="main">
+        <img src="https://www.shaadibaraati.com/vendors-profile/08536435c3565555123ed89c603a7621.jpg"
+            alt="Couple in Photoshoot">
+        <div class="welcome-banner">
+            Welcome to Love Modelling Studio
+        </div>
+        <button class="book-now">Book Now</button>
+    </div>
+
+   
+   
+
+
+</body>
+
+</html>
+
+    
+    {% include 'services.html' with include=True %}
+    {% include 'gallery.html' with include=True %}
+    {% include 'contact.html' with include=True %}
+{% endblock %}

@@ -22,5 +22,8 @@ def process_booking(request):
     # Implement booking processing logic here
     return render(request, 'booking_success.html')
 
+# def blog(request):
+#     return render(request, 'core/home/templates/blog.html')  # Ensure blog.html exists in your templates
+
 def blog(request):
-    return render(request, 'core/home/templates/blog.html')  # Ensure blog.html exists in your templates
+    return render(request, 'blog.html')

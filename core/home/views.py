@@ -36,6 +36,9 @@ def index(request):
 def booking(request):
     return render(request, 'booking.html')  
 
+def blog(request):
+        return render(request, 'blog.html')
+
 def process_booking(request):
     if request.method == "POST":
         first_name = request.POST.get('first_name')
@@ -52,3 +55,5 @@ def process_booking(request):
         return HttpResponse(f"Thank you {first_name} {last_name}, your booking for {service} on {date_time} has been received! Payment method: {payment_method}.")
     else:
         return redirect('booking')  # Redirect to booking form if accessed via GET
+
+     

@@ -1,3 +1,12 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,7 +129,7 @@
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <div class="logo">
             <h1>Capture Love Blog</h1>
         </div>
@@ -133,7 +142,7 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
     <section class="blog-banner">
         <h2>Welcome to Our Blog</h2>
@@ -163,9 +172,9 @@
         </div>
     </section>
 
-    <footer>
+    <!-- <footer>
         <p>&copy; 2024 Capture Love. All Rights Reserved.</p>
-    </footer>
+    </footer> -->
 
     <script>
         // You can add interactive functionality here, such as loading more posts dynamically or animations on scroll.
@@ -176,8 +185,12 @@
 
 </body>
 </html>
-
-
+{% endblock %}
+{% block footer %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
 <!-- templates/blog.html -->
 <!-- <!DOCTYPE html>
 <html lang="en">

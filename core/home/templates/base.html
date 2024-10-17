@@ -10,7 +10,7 @@
             font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #dd97b5, #ac5594);
+            background: linear-gradient(to bottom right, #e63f87, #ac5594);
             color: #333;
         }
 
@@ -42,24 +42,66 @@
             font-size: 18px;
         }
 
+        /* Updated Footer CSS */
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #f3e5f5;
-            margin-top: 30px;
+            background-color: #ff6f91; /* Pink background */
+            color: #ffffff; /* White text */
+            padding: 40px 0; /* Increased padding for larger footer */
+            font-size: 18px; /* Larger font size */
         }
 
-        footer a {
-            margin: 0 10px;
-            color: #ff6f91;
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 15px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 24px; /* Larger heading size */
+            margin-bottom: 15px;
+        }
+
+        .footer-section a {
+            color: #fff; /* White text for links */
             text-decoration: none;
+            font-size: 18px; /* Larger font size */
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #181717; /* Darker color on hover */
+            text-decoration: underline;
+        }
+
+        footer p, footer a {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 770px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+                padding: 10px 0;
+            }
         }
     </style>
 </head>
 
 <body>
     {% block header %}
-
     <header>
         <div class="logo">
             <i class="fas fa-heart"></i><u><b>CAPTURE LOVE: LOVE MODELLING STUDIO</b></u>
@@ -81,12 +123,31 @@
         {% block content %}
         {% endblock %}
     </div>
-    {% block footer %}
 
+    {% block footer %}
     <footer>
-        <p>Contact us: info@lovemodellingstudio.com | Follow us on
-            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-        </p>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                <p>Address: 123 Studio Street, Your City, Your Country</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Social Media</h4>
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank">WhatsApp</a><br>
+                <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a><br>
+                <a href="https://www.instagram.com/yourprofile" target="_blank">Instagram</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="{% url 'gallery' %}">Gallery</a><br>
+                <a href="{% url 'services' %}">Services</a><br>
+                <a href="{% url 'contact' %}">Contact</a>
+            </div>
+        </div>
     </footer>
     {% endblock %}
 </body>

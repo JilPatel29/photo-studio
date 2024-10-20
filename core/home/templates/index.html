@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    {% if not include %}
-        {{ block.super }}
-    {% endif %}
+{% if not include %}
+{{ block.super }}
+{% endif %}
 {% endblock %}
 
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Modelling Studio</title>
-      
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -23,54 +23,51 @@
             color: #333;
         }
 
-        .logo {
-            font-size: 36px;
-            color: #181717;
-            font-family: 'Cursive', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
+        /* Navigation bar */
         nav {
             text-align: center;
-            margin-top: 20px;
+            background-color: #ff6f91;
+            padding: 10px;
         }
 
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #0d0d0d;
+            color: #fff;
             font-size: 18px;
+            font-weight: bold;
         }
 
-        .main {
-            text-align: center;
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+        /* Fullscreen embedded video */
+        .fullscreen-video-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .main img {
-            width: 70%;
-            max-width: 700px;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        .fullscreen-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
+        /* About Us Section */
         .about-us {
             text-align: left;
-            width: 50%;
-            height: 50%;
-            padding: 20px;
-            color: #fff;
+            padding: 40px;
             background-color: rgba(255, 111, 145, 0.8);
             border-radius: 15px;
+            margin: 30px;
+            color: #fff;
         }
 
         .about-us h2 {
             font-size: 28px;
+            margin-bottom: 20px;
         }
 
         .about-us p {
@@ -78,13 +75,10 @@
             line-height: 1.6;
         }
 
-        /* Center container for welcome banner and book button */
+        /* Welcome Banner and Book Now button */
         .center-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-top: 30px;
+            text-align: center;
+            margin-top: 20px;
         }
 
         .welcome-banner {
@@ -99,7 +93,7 @@
         .book-now {
             padding: 15px 30px;
             background: linear-gradient(to right, #ff6f91, #f8c6dc);
-            color:#af455e;
+            color: #af455e;
             background: #f4839d;
             border: none;
             border-radius: 10px;
@@ -115,22 +109,32 @@
 </head>
 
 <body>
-    <div class="main">
-        <img src="https://www.shaadibaraati.com/vendors-profile/08536435c3565555123ed89c603a7621.jpg" alt="Couple in Photoshoot">
 
-        <!-- About Us Section -->
-        <div class="about-us">
-            <h2>About Us</h2>
-            <p>
-                Welcome to Love Modelling Studio, a premier destination for capturing life's most precious moments. 
-                Specializing in maternity, couple, and family photoshoots, our talented photographers bring out the beauty of every moment, 
-                ensuring that your memories are preserved forever.
-            </p>
-            <p>
-                Our studio offers personalized packages to suit your specific needs. Whether it's your wedding, baby bump, or a special family occasion, 
-                Love Modelling Studio ensures that you leave with the perfect keepsakes of your cherished moments.
-            </p>
-        </div>
+    <!-- Fullscreen Embedded YouTube Video -->
+    <div class="fullscreen-video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/Y-4haMTG9l8" 
+            title="Love Modelling Studio Video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-us">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Love Modelling Studio, a premier destination for capturing life's most precious moments.
+            Specializing in maternity, couple, and family photoshoots, our talented photographers bring out the beauty
+            of every moment,
+            ensuring that your memories are preserved forever.
+        </p>
+        <p>
+            Our studio offers personalized packages to suit your specific needs. Whether it's your wedding, baby bump,
+            or a special family occasion,
+            Love Modelling Studio ensures that you leave with the perfect keepsakes of your cherished moments.
+        </p>
     </div>
 
     <!-- Centered Welcome Banner and Book Now Button -->
@@ -145,13 +149,6 @@
     </div>
 
 </body>
-<<<<<<< HEAD
-<<<<<<< HEAD:core/home/template/index.html
-</html> 
-=======
-
-=======
->>>>>>> 73dbaddba5b31b13ff47bc04e7cc84a48b484c2e
 </html>
 
 <!-- Including the services, gallery, and contact pages -->
@@ -159,4 +156,3 @@
 {% include 'gallery.html' with include=True %}
 {% include 'contact.html' with include=True %}
 {% endblock %}
->>>>>>> 55635d32f27ef084068222358d4c12dccedfadc2:core/home/templates/index.html

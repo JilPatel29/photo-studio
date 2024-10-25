@@ -6,4 +6,8 @@ class ServiceAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_filter = ('category',)
 
+    def get_category(self, obj):
+        return getattr(obj, 'category', None)
+    get_category.short_description = 'Category'
+
 admin.site.register(Service, ServiceAdmin)

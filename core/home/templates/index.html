@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
 {% block header %}
-{% if not include %}
-{{ block.super }}
-{% endif %}
+    {% if not include %}
+        {{ block.super }}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,51 +22,54 @@
             color: #333;
         }
 
-        /* Navigation bar */
+        .logo {
+            font-size: 36px;
+            color: #181717;
+            font-family: 'Cursive', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         nav {
             text-align: center;
-            background-color: #ff6f91;
-            padding: 10px;
+            margin-top: 20px;
         }
 
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #fff;
+            color: #0d0d0d;
             font-size: 18px;
-            font-weight: bold;
         }
 
-        /* Fullscreen embedded video */
-        .fullscreen-video-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+        .main {
+            text-align: center;
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
 
-        .fullscreen-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+        .main img {
+            width: 70%;
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* About Us Section */
         .about-us {
             text-align: left;
-            padding: 40px;
+            width: 50%;
+            height: 50%;
+            padding: 20px;
+            color: #fff;
             background-color: rgba(255, 111, 145, 0.8);
             border-radius: 15px;
-            margin: 30px;
-            color: #fff;
         }
 
         .about-us h2 {
             font-size: 28px;
-            margin-bottom: 20px;
         }
 
         .about-us p {
@@ -75,10 +77,13 @@
             line-height: 1.6;
         }
 
-        /* Welcome Banner and Book Now button */
+        /* Center container for welcome banner and book button */
         .center-content {
-            text-align: center;
-            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
         }
 
         .welcome-banner {
@@ -93,7 +98,7 @@
         .book-now {
             padding: 15px 30px;
             background: linear-gradient(to right, #ff6f91, #f8c6dc);
-            color: #af455e;
+            color:#af455e;
             background: #f4839d;
             border: none;
             border-radius: 10px;
@@ -109,32 +114,22 @@
 </head>
 
 <body>
+    <div class="main">
+        <img src="https://www.shaadibaraati.com/vendors-profile/08536435c3565555123ed89c603a7621.jpg" alt="Couple in Photoshoot">
 
-    <!-- Fullscreen Embedded YouTube Video -->
-    <div class="fullscreen-video-container">
-        <iframe 
-            src="https://www.youtube.com/embed/Y-4haMTG9l8" 
-            title="Love Modelling Studio Video" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <!-- About Us Section -->
-    <div class="about-us">
-        <h2>About Us</h2>
-        <p>
-            Welcome to Love Modelling Studio, a premier destination for capturing life's most precious moments.
-            Specializing in maternity, couple, and family photoshoots, our talented photographers bring out the beauty
-            of every moment,
-            ensuring that your memories are preserved forever.
-        </p>
-        <p>
-            Our studio offers personalized packages to suit your specific needs. Whether it's your wedding, baby bump,
-            or a special family occasion,
-            Love Modelling Studio ensures that you leave with the perfect keepsakes of your cherished moments.
-        </p>
+        <!-- About Us Section -->
+        <div class="about-us">
+            <h2>About Us</h2>
+            <p>
+                Welcome to Love Modelling Studio, a premier destination for capturing life's most precious moments. 
+                Specializing in maternity, couple, and family photoshoots, our talented photographers bring out the beauty of every moment, 
+                ensuring that your memories are preserved forever.
+            </p>
+            <p>
+                Our studio offers personalized packages to suit your specific needs. Whether it's your wedding, baby bump, or a special family occasion, 
+                Love Modelling Studio ensures that you leave with the perfect keepsakes of your cherished moments.
+            </p>
+        </div>
     </div>
 
     <!-- Centered Welcome Banner and Book Now Button -->

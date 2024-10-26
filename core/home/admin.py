@@ -11,6 +11,20 @@
 # admin.site.register(Service, ServiceAdmin)
 from django.contrib import admin
 from .models import Service
+from .models import Payment
+from .models import Blog
+from .models import Gallery
+from .models import ContactUs
+from .models import Package
+from .models import Booking
+from .models import Testimonial
 
 # Register your model here
 admin.site.register(Service)
+admin.site.register(Payment)
+admin.site.register(Blog)
+admin.site.register(Gallery)
+admin.site.register(ContactUs)
+admin.site.register(Package)
+admin.site.register(Booking)
+admin.site.register(Testimonial)

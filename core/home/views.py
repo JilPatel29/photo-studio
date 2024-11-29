@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import BlogPost
 
+
 # Create your views here.
 
 def index(request):
@@ -67,4 +68,3 @@ def process_booking(request):
     else:
         return redirect('booking')  # Redirect to booking form if accessed via GET
 
-     

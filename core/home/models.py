@@ -102,6 +102,11 @@ class Testimonial(models.Model):
     def __str__(self):
         return f"{self.customer_name} - {self.rating} stars"
     
+class BlogPost(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    # Other fields
+
 
 # class ServiceAdmin(admin.ModelAdmin):
 #     list_display = ('name', 'description', 'category')

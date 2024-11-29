@@ -102,8 +102,7 @@ class Testimonial(models.Model):
     def __str__(self):
         return f"{self.customer_name} - {self.rating} stars"
     
-<<<<<<< HEAD
-=======
+
 # class ServiceAdmin(admin.ModelAdmin):
 #     list_display = ('name', 'description', 'category')
 #     search_fields = ('name',)
@@ -114,4 +113,4 @@ class Testimonial(models.Model):
 #     get_category.short_description = 'Category'
 
 # admin.site.register(Service, ServiceAdmin) 
->>>>>>> c5b9458bfefe822600fbc315b7ef5454d471ecdd
+

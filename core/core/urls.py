@@ -27,6 +27,7 @@ urlpatterns = [
     path('booking/', views.booking, name='booking'),  # /services/ will load home.html
     path('process-booking/', views.process_booking, name='process_booking'),
     path('blog/', views.blog, name='blog'),
+     
     path('admin/', admin.site.urls),  # Include the admin URL
     path('', include('home.urls')),     
 

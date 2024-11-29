@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
+from .models import BlogPost
 
 # Create your views here.
 
@@ -38,6 +39,16 @@ def booking(request):
 
 def blog(request):
         return render(request, 'blog.html')
+
+
+def blog_list(request):
+    posts = BlogPost.objects.all()  # Fetch all blog posts
+    return render(request, 'blog_list.html', {'posts': posts})
+
+
+def blog_detail(request, id):
+    blog = get_object_or_404(BlogPost, id=id)
+    return render(request, 'home/blog_detail.html', {'blog': blog})
 
 def process_booking(request):
     if request.method == "POST":

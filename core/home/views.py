@@ -1,9 +1,62 @@
+from pyexpat.errors import messages
 from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import BlogPost
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.contrib import messages
+from .models import CustomUser  # Import CustomUser model
+
+def signup_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        phone_number = request.POST['phone_number']  # Get phone number
+
+        # Basic validation
+        if password1 != password2:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'signup.html')
+        
+        if CustomUser.objects.filter(username=username).exists():
+            messages.error(request, "Username already taken.")
+            return render(request, 'signup.html')
+
+        if CustomUser.objects.filter(email=email).exists():
+            messages.error(request, "Email already registered.")
+            return render(request, 'signup.html')
+
+        if CustomUser.objects.filter(phone_number=phone_number).exists():
+            messages.error(request, "Phone number already registered.")
+            return render(request, 'signup.html')
+
+        # Create user
+        user = CustomUser.objects.create_user(username=username, email=email, password=password1, phone_number=phone_number)
+        user.save()
+
+        # Log the user in and redirect to the home page
+        login(request, user)
+        return redirect('home')  # Replace 'home' with your actual home URL name
+    
+    return render(request, 'signup.html')
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')  # Redirect to home page after login
+        else:
+            messages.error(request, 'Invalid username or password.')
+
+    return render(request, 'login.html')
 
 
-# Create your views here.
 
 def index(request):
     people = [

@@ -7,9 +7,11 @@ from .models import ContactUs
 from .models import Package
 from .models import Booking
 from .models import Testimonial
+from .models import CustomUser
 
 
 # Register your model here
+admin.site.register(CustomUser)
 admin.site.register(Service)
 admin.site.register(Payment)
 admin.site.register(Blog)
